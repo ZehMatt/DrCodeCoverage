@@ -1,7 +1,9 @@
 #include "modules.h"
 #include "coverage.h"
+
 #include "formats/format_bin.h"
 #include "formats/format_idc.h"
+#include "formats/format_drcov.h"
 
 #include <vector>
 #include <algorithm>
@@ -173,7 +175,8 @@ void modules_dump(const std::string& format)
     }
     else if (format == "drcov")
     {
-        // TODO: Implement me.
+        OutputFormatDrCov out;
+        out.createOutput(_modules);
     }
 }
 
